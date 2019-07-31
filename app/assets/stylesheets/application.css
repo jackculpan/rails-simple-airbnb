@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navbar-items {
+  display: inherit;
+}

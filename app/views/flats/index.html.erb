@@ -1,0 +1,51 @@
+<div class ="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our flats</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="col">
+        <p>You searched for...</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @flats.each do |flat| %>
+      <div class="col-sm-12 col-lg-4">
+
+          <div class="flat-card">
+
+
+            <div class="flat-card-img" style="background-image: url('https://source.unsplash.com/random/1200x800')">
+            </div>
+
+            <div class="flat-card-content">
+              <div class="flat-card-title">
+                <h4><%= flat.name %></h4>
+              </div>
+              <p> <%= flat.address %> </p>
+              <div class="flex">
+                <div class="flex">
+                  <h6> <%= flat.number_of_guests %> </h6>
+                </div>
+                <div class="flex ml-3">
+                  <h6> <%= flat.price_per_night %> </h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="flat-card-actions d-flex justify-content-around">
+              <a href="<%flat_path(flat.id)%>" class="href">More Information</a>
+              <a href="<%edit_flat_path(flat.id)%>" class="href">Edit</a>
+            </div>
+
+          </div>
+          </div>
+          <% end %>
+
+    </div>
+  </div>
+</div>
